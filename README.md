@@ -1,6 +1,10 @@
 # GC-Net-historical-metadata
 
-This repository contains documents and information that complement the historical GC-Net Automated Weather Station (AWS) dataset
+This repository contains documents and information that complement the historical GC-Net Automated Weather Station (AWS) dataset.
+The GC-Net project was lead by Prof. K. Steffen (1952-2020)
+ 
+Contributors to this compilation:
+B. Vandecrux, J. Box, D. Houtz, J. Weber, R. Huff, N. Molotch, D. McGrath, N. Bayou, A. Heilig, K. Sampson
 
 ## Content:
 [Field books](Field%20books)
@@ -8,9 +12,10 @@ This repository contains documents and information that complement the historica
 [Sensor documentation](Sensor%20documentation)
 
 [Publications about or using GC-Net data](GC-Net_publications.csv)
+(downloaded regularly from [here](https://docs.google.com/spreadsheets/d/1K8E8agRnhvhMJW9e0Sh2Ojz69r2lDpA6ctM85hwhi0w/edit?usp=sharing))
 
 [Compilation of observed coordinates at GC-Net sites](GC-Net_observed_coordinates.csv)
-
+(downloaded from [here](https://docs.google.com/spreadsheets/d/1R2SA7rqo9PHfAAGeSVgy7eWVHRugV8Z3nbWga5Xin1U/edit?usp=sharing))
 
 ## The AWS data is available at:
 

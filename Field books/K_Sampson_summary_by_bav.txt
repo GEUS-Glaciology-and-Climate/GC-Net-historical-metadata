@@ -1,0 +1,337 @@
+Summary of the notes from Kevin Sampson
+
+Humboldt
+05_2003c has been changed because of a processing error that reversed the channels in the snow temperature dataset.
+From 1.0 2003 through 148.0417, the channels were wrong.  The columns have been swapped in the following ways:
+
+TC 1m > TC 10m
+TC 2m > TC 9m
+TC 3m > TC 8m
+TC 4m > TC 7m
+TC 5m > TC 6m
+
+
+05_1995c has been changed in the following way.  The 10m and 1m snow temperature columns have been switched to comply
+with the following years (where the TC1 slot is actually the 10m temp).  
+
+------------
+Very important:
+the 14c file has been modified in the following way.  The 4m snow temperature has been moved to become the 2m
+temperature.  This decision was made based on the data.  Probably wired incorrectly at the logger.
+
+
+05c_condensed is the same as 05c but condensed down to 21 columns.  The columns are as follows:
+
+1	Julian date starting 1/1/1995
+2	Year
+3	Julian Decimal Time
+4	TC Air 1
+5	TC Air 2
+6	CS500 T Air 1
+7	CS500 T Air 2
+8	Snow Height 1
+9	Snow Height 2
+10	T Snow 1
+11	T Snow 2
+12	T Snow 3
+13	T Snow 4
+14	T Snow 5
+15 	T Snow 6
+16	T Snow 7
+17	T Snow 8
+18	T Snow 9
+19	T Snow 10
+20	Height of profile 1
+21	Height of profile 2
+
+_____
+in 05c_condensed, all 999 values have been replaced with NaN using the "nine_remover" script in Matlab, and the first
+column (station number) has been changed to julian time.
+
+___________
+
+05c_consensed has had the snow height (columns 8,9) changed.  In order to input Russ' clean snow height data into my
+time-series, the time-series was expanded in two places (74634 to 74726 and 73466 to 83486) and filled in to make 
+the time-series identical to the GC-Net c data where the cleaned snow height data comes from.  Then that data was
+placed into columns 8 and 9.   
+
+Also, the following adjustments were also made to the sfc. height data to further clean it.  Column 8 day 2682.75 to 2922.9167
+were changed to NaN.  Column 9 day 2733 to 2922.9167 was also changed to NaN.  This was a period where data values went flat
+until the end of the year.  Column 8 day 3248 to 3286.6629 were changed to NaN because the sensor seems to have gotten stuck
+in several different places up until the end of the year.  Also Column 9 was changed from 3264 to 3286.6629 for the same reason.
+Column 8 day 3287.9167 to 3287.9583 was changed to NaN because of an impossible .5m dip seen in only one sensor.  Column 8
+day 3294.875 to 3296.375 were changed to NaN becuase of a large (15cm) rise that only lasts less than 1 day before returning
+and is not seen by the other sensor.  
+_____________________
+
+05c_condensed has repeat values for day 3436 (this happens to be the day after a station visit).  
+The first set of values has been taken out as they are more variable than the second set and the second set
+agrees better with existing c-data (made prior to this analysis).
+
+
+"_condensed_w_russ_sfcheight" means that I have substituted my computed surface height data with Russ's C-data
+surface height product.  That is the only change from "_condensed" files. 
+
+"_condensed_w_fixed_sfcheight" means that i have substituted my computed surface height data with Russ's C-data
+surface height product, and adjusted the values after year-end blackouts to reflect the accumulation trend (sites 06, and 14).
+The adjustment was made with a linear extrapolation based on all previous data values least squares regression line.  
+Then the time of the re-appearance of the data is plugged into that calculation and adjusted up or down to match where the
+accumulation should be.  All annual, daily, and monthly averages are based on this file.
+
+
+
+Summit
+Note BV: The first switchof thermistor channels reported in Jan 1997 is not visible in the data file anymore. However, in May 1999 when K. Sampson notes that they are channels are set back to normal, the current datafile shows that they are actually switched again. 
+
+These files are for Summit (06).  All were procesessed using qc program in IDL.  Snow Temp was cleaned using small limit filters in the root directory for this folder.  Post processing included correcting for channel switches made in 1997 and 1999.  The channels were changed upon visit on day 28.375 and onward in 1997, all of 1998 and through 132.625 of 1999.  The channels changed in the following ways:
+
+1997       1999
+1m > 10m > 1m
+2m > 9m > 2m
+3m > 8m > 3m
+4m > 7m > 4m
+5m > 6m > 5m
+6m > 5m > 6m
+7m > 4m > 7m
+8m > 3m > 8m
+9m > 1m > 9m
+10m > 2m > 10m
+
+The 06c file is a concatenated version of all the other yearly files.
+
+The columns in 06c are as follows:
+
+-----
+Note BV: The following switch does not appear anymore in the data.
+1998 columns from 1.0 1998 through 16.375 were changed becuase during processing, the channels were mixed up.  
+The columns were switched in the following way:
+
+10m > 2m > 10m
+9m > 1m > 9m
+8m > 3m > 8m
+7m > 4m > 7m
+6m > 5m > 6m
+5m > 6m > 5m
+4m > 7m > 4m
+3m > 8m > 3m
+2m > 10m > 2m
+1m > 9m > 1m
+
+06c_condensed is the same as 06c but condensed down to 21 columns.  The columns are as follows:
+
+1	Julian time starting 1/1/1995
+2	Year
+3	Julian Decimal Time
+4	TC Air 1
+5	TC Air 2
+6	CS500 T Air 1
+7	CS500 T Air 2
+8	Snow Height 1
+9	Snow Height 2
+10	T Snow 1
+11	T Snow 2
+12	T Snow 3
+13	T Snow 4
+14	T Snow 5
+15 	T Snow 6
+16	T Snow 7
+17	T Snow 8
+18	T Snow 9
+19	T Snow 10
+20	Height of profile 1
+21	Height of profile 2
+
+_____
+in 06c_condensed, all 999 values have been replaced with NaN using the "nine_remover" script in Matlab, and column 1
+(station number) has been replaced with julian time.
+
+
+____________
+
+___________
+Note BV: No idea if the “Russ’ clean snow height” has been included in the current data product. I doubt so.
+
+05c_consensed has had the snow height (columns 8,9) changed.  In order to input Russ' clean snow height data into my
+time-series, the time-series was expanded in one place (49405 to 49406) and filled in to make 
+the time-series identical to the GC-Net c data where the cleaned snow height data comes from.  Also, row 58166 was deleted.
+Then that data was placed into columns 8 and 9.   
+
+Also, the following adjustments were also made to the sfc. height data to further clean it.  
+
+
+"_condensed_w_russ_sfcheight" means that I have substituded my computed surface height data with Russ's C-data
+surface height product.  That is the only change from "_condensed" files. 
+
+"_condensed_w_fixed_sfcheight" means that i have substituted my computed surface height data with Russ's C-data
+surface height product, and adjusted the values after year-end blackouts to reflect the accumulation trend (sites 06, and 14).
+The adjustment was made with a linear extrapolation based on all previous data values least squares regression line.  
+Then the time of the re-appearance of the data is plugged into that calculation and adjusted up or down to match where the
+accumulation should be.  All annual, daily, and monthly averages are based on this file.
+
+South Dome
+
+11_1998c modified because of channel changes.  during the period 1.0 1998 through 41.125 1998, the following channels were reversed:
+
+10m - 1m
+9m - 2m
+8m - 3m
+7m - 4m
+6m - 5m
+
+The columns were switched manually to fix this.
+
+
+______________
+
+11_1999c was modified in the same way.  During the period 1.0 1999 through 29.125, the following channels were
+reversed:
+
+
+10m - 1m
+9m - 2m
+8m - 3m
+7m - 4m
+6m - 5m
+
+The columns were switched manually to fix this.
+
+______________
+
+11_2000c was modified in the same way.  During the period 1.0 1999 through 17.125, the following channels were
+reversed:
+
+
+10m - 1m
+9m - 2m
+8m - 3m
+7m - 4m
+6m - 5m
+
+The columns were switched manually to fix this.
+
+_______________
+
+
+11c_condensed is the same as 11c but condensed down to 21 columns, with 999 remover run, and station name (column 1)
+changed to julian date.  The columns are as follows:
+
+1	Julian Date starting 1/1/1995
+2	Year
+3	Julian Decimal Time
+4	TC Air 1
+5	TC Air 2
+6	CS500 T Air 1
+7	CS500 T Air 2
+8	Snow Height 1
+9	Snow Height 2
+10	T Snow 1
+11	T Snow 2
+12	T Snow 3
+13	T Snow 4
+14	T Snow 5
+15 	T Snow 6
+16	T Snow 7
+17	T Snow 8
+18	T Snow 9
+19	T Snow 10
+20	Height of profile 1
+21	Height of profile 2
+
+_____
+in 11c_condensed, all 999 values have been replaced with NaN using the "nine_remover" script in Matlab. Also, the value
+at 1/1/2001 (row 32364) has had all snow temp. values set to NaN becuase it is anomalous.  Also, row 3705 was deleted because
+the date was "NaN".
+
+
+
+"_condensed_w_russ_sfcheight" means that I have substituded my computed surface height data with Russ's C-data
+surface height product.  That is the only change from "_condensed" files. 
+
+"_condensed_w_fixed_sfcheight" means that i have substituted my computed surface height data with Russ's C-data
+surface height product, and adjusted the values after year-end blackouts to reflect the accumulation trend (sites 06, and 14).
+The adjustment was made with a linear extrapolation based on all previous data values least squares regression line.  
+Then the time of the re-appearance of the data is plugged into that calculation and adjusted up or down to match where the
+accumulation should be.  All annual, daily, and monthly averages are based on this file.
+
+
+NGRIP
+
+14_1997 had to be modified due to channel changes that occurred during the processing.  The file here has 
+been modified from its original version in the following ways.  Snow temperature channels were switched:
+
+10m > 1m
+9m > 2m
+8m > 3m
+7m > 4m
+6m > 5m
+
+
+____
+
+
+
+
+14c_condensed is the same as 14c but condensed down to 21 columns, and with column 1 changed to julian date 
+instead of station number.  Also 999 remover has been run.  The columns are as follows:
+
+1	Julian date starting 1/1/1995
+2	Year
+3	Julian Decimal Time
+4	TC Air 1
+5	TC Air 2
+6	CS500 T Air 1
+7	CS500 T Air 2
+8	Snow Height 1
+9	Snow Height 2
+10	T Snow 1
+11	T Snow 2
+12	T Snow 3
+13	T Snow 4
+14	T Snow 5
+15 	T Snow 6
+16	T Snow 7
+17	T Snow 8
+18	T Snow 9
+19	T Snow 10
+20	Height of profile 1
+21	Height of profile 2
+
+
+Row 52399, column 20 in x14c_condensed has been changed to NaN as it was an impossible value (11111111).
+
+_________________
+
+In 14c_condensed, the values at 1/1/2003 for snow height get reset to 0.  The last value of the previous year is thus
+added to all remaining data values in that column.  This happens for both snow height sensors.  So, the value of 
+1/1/2003 (48011) for snow height 1 (column 8) has 2.2797 added to all remaining rows.  Column 9 (snow height 2) has
+2.5213 added to all remaining rows (48011-end).  
+
+
+"_condensed_w_russ_sfcheight" means that I have substituded my computed surface height data with Russ's C-data
+surface height product.  That is the only change from "_condensed" files. 
+
+"_condensed_w_fixed_sfcheight" means that i have substituted my computed surface height data with Russ's C-data
+surface height product, and adjusted the values after year-end blackouts to reflect the accumulation trend (sites 06, and 14).
+The adjustment was made with a linear extrapolation based on all previous data values least squares regression line.  
+Then the time of the re-appearance of the data is plugged into that calculation and adjusted up or down to match where the
+accumulation should be.  All annual, daily, and monthly averages are based on this file.
+Other notes
+11/25/06
+ 
+   14_2003a has been modified.  wind direction 2 and pressure are switched, and snow height 1 has been deleted and
+made equal to snow height 2, becuase there is an obvious discrepancy.  What was in the snow height 1 channel was 
+unidentifiable.
+
+   Some of the 03 and 04 data, as well as all of the 05 and 06 data cannot be processed because the n2003, n2004, n2005
+and n2006 .dat files are missing.  These files specify the number of lines in each a file.  
+
+
+2/5/07
+
+   What is going on with 11c after 1/1/2001?  Temps are shifted upward and variance is much higher.
+Note BV: I cannot see these data in the current file. Must have been removed.
+
+   What happened to NGRIP in 2000 that made the record so noisy?
+
+
+
