@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7728550.svg)](https://doi.org/10.5281/zenodo.7728550)
+
 # GC-Net-historical-metadata
 
 This repository contains documents and information that complement the historical GC-Net Automated Weather Station (AWS) dataset.
