@@ -3,10 +3,13 @@
 This repository contains documents and information that complement the historical GC-Net Automated Weather Station (AWS) dataset
 
 ## Content:
-[Field books](Field books)
-[Sensor documentation](Sensor documentation)
+[Field books](Field%20books)
+
+[Sensor documentation](Sensor%20documentation)
+
 [Publications about or using GC-Net data](GC-Net_publications.csv)
-[Compilation of observed coordinates at GC-Net sites](GC-Net_observed coordinates.csv)
+
+[Compilation of observed coordinates at GC-Net sites](GC-Net_observed_coordinates.csv)
 
 
 ## The AWS data is available at:
