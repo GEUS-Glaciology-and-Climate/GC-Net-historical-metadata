@@ -4,7 +4,7 @@ This repository contains documents and information that complement the historica
 The GC-Net project was lead by Prof. K. Steffen (1952-2020)
  
 Contributors to this compilation:
-B. Vandecrux, J. Box, D. Houtz, J. Weber, R. Huff, N. Molotch, D. McGrath, N. Bayou, A. Heilig, K. Sampson
+B. Vandecrux, J. Box, D. Houtz, J. Weber, R. Huff, N. Molotch, D. McGrath, N. Bayou, A. Heilig, K. Sampson, P. How, N. Karlsson, K. Mankoff, A. Ahlstrøm
 
 ## Content:
 [Field books](Field%20books)
